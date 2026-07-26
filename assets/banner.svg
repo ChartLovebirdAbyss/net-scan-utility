@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a0f"/>
+      <stop offset="55%" stop-color="#081620"/>
+      <stop offset="100%" stop-color="#031014"/>
+    </linearGradient>
+    <radialGradient id="scanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#0ea5b8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0ea5b8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="textGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6fffb"/>
+      <stop offset="100%" stop-color="#9fe9e0"/>
+    </linearGradient>
+    <linearGradient id="sweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="360" fill="url(#bg)"/>
+
+  <!-- faint grid -->
+  <g stroke="#0f3540" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="360"/>
+    <line x1="400" y1="0" x2="400" y2="360"/>
+    <line x1="600" y1="0" x2="600" y2="360"/>
+    <line x1="800" y1="0" x2="800" y2="360"/>
+    <line x1="1000" y1="0" x2="1000" y2="360"/>
+  </g>
+
+  <!-- radar scan zone right side -->
+  <circle cx="920" cy="180" r="230" fill="url(#scanGlow)"/>
+  <circle cx="920" cy="180" r="150" fill="none" stroke="#155e63" stroke-width="1" opacity="0.5"/>
+  <circle cx="920" cy="180" r="100" fill="none" stroke="#155e63" stroke-width="1" opacity="0.5"/>
+  <circle cx="920" cy="180" r="50" fill="none" stroke="#155e63" stroke-width="1" opacity="0.5"/>
+
+  <!-- radar sweep -->
+  <path d="M920 180 L920 30 A150 150 0 0 1 1050 105 Z" fill="url(#sweepGrad)" opacity="0.5"/>
+
+  <!-- network graph nodes and links -->
+  <g stroke="#2dd4bf" stroke-width="1.4" opacity="0.75">
+    <line x1="920" y1="180" x2="1010" y2="110"/>
+    <line x1="920" y1="180" x2="1030" y2="220"/>
+    <line x1="920" y1="180" x2="860" y2="90"/>
+    <line x1="920" y1="180" x2="840" y2="250"/>
+    <line x1="920" y1="180" x2="1000" y2="270"/>
+    <line x1="1010" y1="110" x2="1070" y2="70"/>
+    <line x1="1030" y1="220" x2="1090" y2="240"/>
+    <line x1="860" y1="90" x2="800" y2="60"/>
+  </g>
+
+  <g>
+    <circle cx="920" cy="180" r="10" fill="url(#nodeGrad)"/>
+    <circle cx="920" cy="180" r="16" fill="none" stroke="#5eead4" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="1010" cy="110" r="6" fill="#5eead4"/>
+    <circle cx="1030" cy="220" r="6" fill="#5eead4"/>
+    <circle cx="860" cy="90" r="6" fill="#5eead4"/>
+    <circle cx="840" cy="250" r="6" fill="#5eead4"/>
+    <circle cx="1000" cy="270" r="6" fill="#5eead4"/>
+    <circle cx="1070" cy="70" r="4.5" fill="#22d3ee"/>
+    <circle cx="1090" cy="240" r="4.5" fill="#22d3ee"/>
+    <circle cx="800" cy="60" r="4.5" fill="#22d3ee"/>
+  </g>
+
+  <!-- crosshair accent near text -->
+  <g stroke="#0e7490" stroke-width="1" opacity="0.5">
+    <line x1="60" y1="40" x2="60" y2="70"/>
+    <line x1="45" y1="55" x2="75" y2="55"/>
+  </g>
+
+  <!-- small terminal-esque tag -->
+  <rect x="60" y="70" width="150" height="26" rx="4" fill="#0a2530" stroke="#155e63" stroke-width="1"/>
+  <text x="72" y="88" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#5eead4" letter-spacing="1">SCAN::ACTIVE</text>
+
+  <!-- headline -->
+  <text x="60" y="175" font-family="'Segoe UI', Arial, sans-serif" font-size="66" font-weight="700" fill="url(#textGlow)">
+    <tspan x="60" y="175" textLength="720" lengthAdjust="spacingAndGlyphs">Network Enumeration</tspan>
+  </text>
+
+  <!-- accent underline -->
+  <rect x="60" y="196" width="220" height="4" fill="#22d3ee" opacity="0.8"/>
+
+  <!-- tagline -->
+  <text x="60" y="240" font-family="'Segoe UI', Arial, sans-serif" font-size="21" fill="#9fd4d0">
+    <tspan x="60" y="240" textLength="1000" lengthAdjust="spacingAndGlyphs">Network enumeration retrieves usernames, groups, shares, and</tspan>
+    <tspan x="60" y="270" textLength="820" lengthAdjust="spacingAndGlyphs">services from hosts — deeper than simple network mapping.</tspan>
+  </text>
+
+  <!-- bottom decorative scan line -->
+  <line x1="60" y1="305" x2="700" y2="305" stroke="#0e7490" stroke-width="1" opacity="0.5"/>
+  <circle cx="700" cy="305" r="3" fill="#22d3ee"/>
+</svg>
